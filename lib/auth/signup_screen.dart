@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lottie/lottie.dart';
 import 'package:praner_market/auth/login_screen.dart';
+import 'package:praner_market/controllers/auth_controllers.dart';
 
 import '../widgets/custom_appbar.dart';
 import '../widgets/custom_button.dart';
@@ -13,6 +14,8 @@ class Signup_screeen extends StatelessWidget {
   Signup_screeen({super.key});
   final _emailformkey = GlobalKey<FormState>();
   final _passformkey = GlobalKey<FormState>();
+
+  final controller = Get.put(Auth_Controller());
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +43,9 @@ class Signup_screeen extends StatelessWidget {
                       key: _emailformkey,
                       child: Custom_formField(
                         prefixicon: Icons.email,
+                        onchanged: (emeil) {
+                          controller.email.value = emeil;
+                        },
                         hinttext: "Email",
                         validation: (value) {
                           if (value!.isEmpty) {
@@ -56,6 +62,9 @@ class Signup_screeen extends StatelessWidget {
                       prefixicon: Icons.remove_red_eye,
                       hinttext: "Password",
                       obscuretext: true,
+                      onchanged: (password) {
+                        controller.password.value = password;
+                      },
                       validation: (value) {
                         if (value!.isEmpty) {
                           return "Fill The Form";
@@ -70,8 +79,11 @@ class Signup_screeen extends StatelessWidget {
                       key: _passformkey,
                       child: Custom_formField(
                         prefixicon: Icons.remove_red_eye,
-                        hinttext: "Again password",
+                        hinttext: "Confirm password",
                         obscuretext: true,
+                        onchanged: (confirmpassword) {
+                          controller.confirmpassword.value = confirmpassword;
+                        },
                         validation: (value) {
                           if (value!.isEmpty) {
                             return "Fill The Form";
@@ -85,10 +97,11 @@ class Signup_screeen extends StatelessWidget {
                             20), // Add some space between TextFormField and Button
                     Custom_Button(
                       text: "Signup",
+                      isloading: controller.isloading.value,
                       ontap: () {
                         if (_emailformkey.currentState!.validate() &&
                             _passformkey.currentState!.validate()) {
-                          Get.snackbar("done", "working");
+                          Get.off(controller.SignUp());
                         }
                       },
                     ),

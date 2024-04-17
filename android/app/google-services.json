@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "520072344081",
+    "project_id": "praner-market",
+    "storage_bucket": "praner-market.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520072344081:android:75442e3bcda8ee498bb7b0",
+        "android_client_info": {
+          "package_name": "com.example.praner_market"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7P4jfHqejBYUrC9zOVcVwbWWWoHbv-mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

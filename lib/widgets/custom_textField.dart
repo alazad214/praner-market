@@ -7,16 +7,18 @@ class Custom_formField extends StatelessWidget {
       this.hinttext,
       this.prefixicon,
       this.validation,
-      this.obscuretext});
+      this.obscuretext, this.onchanged});
 
   final hinttext;
   final IconData? prefixicon;
   final validation;
   final obscuretext;
+  final onchanged;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onchanged,
       validator: validation,
       obscureText: obscuretext ?? false,
       decoration: InputDecoration(

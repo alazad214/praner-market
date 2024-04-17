@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -15,10 +16,16 @@ class Splash_Screen extends StatefulWidget {
 }
 
 class _Splash_ScreenState extends State<Splash_Screen> {
+  final user = FirebaseAuth.instance.currentUser;
+
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 2), () {
-      Get.offAll(() => Welcome_Screen());
+    Future.delayed(const Duration(seconds: 2), () {
+      if (user == null) {
+        Get.off(const Welcome_Screen());
+      } else {
+        Get.offAll(const Home_Screen());
+      }
     });
     super.initState();
   }
