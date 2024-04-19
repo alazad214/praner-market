@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
 class Custom_Title_SubTitle extends StatelessWidget {
-  const Custom_Title_SubTitle({super.key, required this.title, required this.subtitle});
+  const Custom_Title_SubTitle(
+      {super.key, required this.title, required this.subtitle});
   final String title;
   final String subtitle;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           Text(
+          Text(
             title,
-            textAlign: TextAlign.center,
             style: const TextStyle(
                 fontSize: 25,
                 color: Colors.blueAccent,
@@ -22,12 +23,12 @@ class Custom_Title_SubTitle extends StatelessWidget {
           ),
           Text(
             subtitle,
-            textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
-              color: Colors.blue.shade500,
+              color: Colors.black45,
             ),
           ),
+
         ],
       ),
     );
