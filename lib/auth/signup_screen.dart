@@ -101,7 +101,7 @@ class Signup_screeen extends StatelessWidget {
                       ontap: () {
                         if (_emailformkey.currentState!.validate() &&
                             _passformkey.currentState!.validate()) {
-                          Get.off(controller.SignUp());
+                          controller.SignUp();
                         }
                       },
                     ),

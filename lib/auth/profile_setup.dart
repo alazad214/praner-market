@@ -78,7 +78,6 @@ class Profile_setup extends StatelessWidget {
                       child: Custom_formField(
                         prefixicon: Icons.phone,
                         hinttext: "Phone number",
-
                         onchanged: (phone) {
                           controller.phone.value = phone;
                         },
@@ -98,7 +97,6 @@ class Profile_setup extends StatelessWidget {
                       child: Custom_formField(
                         prefixicon: Icons.location_on,
                         hinttext: "address",
-
                         onchanged: (address) {
                           controller.address.value = address;
                         },

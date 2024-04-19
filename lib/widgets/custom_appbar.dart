@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Custom_AppBar extends StatelessWidget implements PreferredSizeWidget {
-  const Custom_AppBar({super.key, this.backgroundcolor});
+  const Custom_AppBar({super.key, this.backgroundcolor, this.title});
   final Color? backgroundcolor;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      title: Text("Profile"),
       backgroundColor: backgroundcolor ?? Colors.black,
       leading: IconButton(
           onPressed: () {

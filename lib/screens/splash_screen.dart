@@ -2,10 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:praner_market/auth/profile_setup.dart';
+
 import 'package:praner_market/screens/bottomnav_screen.dart';
-import 'package:praner_market/screens/home_screen.dart';
-import 'package:praner_market/screens/profile_screen.dart';
+
 import 'package:praner_market/screens/welcome_screen.dart';
 
 class Splash_Screen extends StatefulWidget {
@@ -24,7 +23,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
       if (user == null) {
         Get.off(const Welcome_Screen());
       } else {
-        Get.offAll(const Home_Screen());
+        Get.offAll( BottomNav_Screen());
       }
     });
     super.initState();

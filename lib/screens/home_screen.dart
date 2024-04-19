@@ -5,8 +5,19 @@ class Home_Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.red,
+    return const Scaffold(
+      body: SafeArea(
+          child: SingleChildScrollView(
+        child: Column(
+          children: [
+
+
+
+
+
+          ],
+        ),
+      )),
     );
   }
 }
