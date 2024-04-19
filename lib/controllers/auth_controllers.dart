@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 import 'package:praner_market/auth/profile_setup.dart';
+import 'package:praner_market/screens/home_screen.dart';
 import '../screens/bottomnav_screen.dart';
 
 class Auth_Controller extends GetxController {
@@ -66,26 +67,17 @@ class Auth_Controller extends GetxController {
     }
   }
 
-  profile_() async {
-    final token = await FirebaseMessaging.instance.getToken();
-
-    if (token != null) {
-      // টোকেন যদি নাল না হয়
-      await FirebaseFirestore.instance
-          .collection("users")
-          .doc(users?.email)
-          .collection("user")
-          .add({
-        "email": users!.email,
-        "name": name.value,
-        "phone": phone.value,
-        "address": address.value,
-        'token': token,
-      });
-      Get.offAll(BottomNav_Screen());
-    } else {
-      // টোকেন পাওয়া যায়নি, তাই এরর হ্যান্ডল করুন
-      print("Token is null"); // এখানে টোকেন নাল হয়েছে
-    }
+  profileSetUp() async {
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(email.value)
+        .collection("user")
+        .add({
+      'email': email.value,
+      'full_name': name.value,
+      'address': address.value,
+      'phone_number': phone.value,
+    });
+    Get.offAll(() => BottomNav_Screen());
   }
 }

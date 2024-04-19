@@ -21,8 +21,10 @@ class Signup_screeen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: const Custom_AppBar(),
+      backgroundColor: Colors.white,
+      appBar: const Custom_AppBar(
+        backgroundcolor: Colors.white,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -31,6 +33,7 @@ class Signup_screeen extends StatelessWidget {
               Lottie.asset("assets/animations/login.json",
                   height: Height / 2.5),
               const Custom_Title_SubTitle(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 title: "SignIn!",
                 subtitle: "Just a few quick things to get started",
               ),

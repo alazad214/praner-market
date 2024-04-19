@@ -118,7 +118,7 @@ class Profile_setup extends StatelessWidget {
                             _nameformkey.currentState!.validate() &&
                             _numberformkey.currentState!.validate() &&
                             _addressformkey.currentState!.validate()) {
-                          controller.profile_();
+                          controller.profileSetUp();
                         }
                       },
                     ),

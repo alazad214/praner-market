@@ -13,7 +13,6 @@ class Welcome_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.black,
       body: SafeArea(
           child: Center(
         child: Column(
@@ -22,6 +21,8 @@ class Welcome_Screen extends StatelessWidget {
             Lottie.asset("assets/animations/shopping_cart.json",
                 height: Height / 2.5),
             const Custom_Title_SubTitle(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 title: "Praner Market",
                 subtitle:
                     "Welcome to Praner Market App. Delivery charge is free only when shopping for the first time. Enjoy shopping"),
@@ -38,11 +39,11 @@ class Welcome_Screen extends StatelessWidget {
                     },
                   )),
                   const SizedBox(width: 10),
-                   Expanded(
+                  Expanded(
                       child: Custom_Button(
-                        ontap: (){
-                          Get.to(() => Signup_screeen());
-                        },
+                    ontap: () {
+                      Get.to(() => Signup_screeen());
+                    },
                     text: "Signup",
                   )),
                 ],

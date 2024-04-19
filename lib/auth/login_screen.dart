@@ -22,7 +22,6 @@ class Login_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: const Custom_AppBar(),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -32,6 +31,8 @@ class Login_Screen extends StatelessWidget {
               Lottie.asset("assets/animations/login.json",
                   height: Height / 2.5),
               const Custom_Title_SubTitle(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 title: "Login!",
                 subtitle:
                     "Login with your email and password if you have already signed up to the app.",

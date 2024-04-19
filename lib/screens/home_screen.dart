@@ -25,6 +25,9 @@ class Home_Screen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Custom_Title_SubTitle(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  textalign: TextAlign.start,
                   title: "Al Azad",
                   subtitle:
                       "Buy one product form any place, at any time.very easily with dhamaka."),
