@@ -31,31 +31,43 @@ class _BottomNav_ScreenState extends State<BottomNav_Screen> {
         items: [
           /// Home
           SalomonBottomBarItem(
-            icon: const Icon(Icons.home),
-            title: const Text("Home"),
-            selectedColor: Colors.blueGrey,
-          ),
+              icon: const Icon(Icons.home_outlined),
+              title: const Text("Home"),
+              selectedColor: Colors.blueGrey,
+              activeIcon: const Icon(
+                Icons.home_filled,
+                color: Colors.blue,
+              )),
 
           /// Likes
           SalomonBottomBarItem(
-            icon: const Icon(Icons.shopping_cart),
-            title: const Text("Cart"),
-            selectedColor: Colors.pink,
-          ),
+              icon: const Icon(Icons.shopping_cart_outlined),
+              title: const Text("Cart"),
+              selectedColor: Colors.pink,
+              activeIcon: const Icon(
+                Icons.shopping_cart,
+                color: Colors.blue,
+              )),
 
           /// Search
           SalomonBottomBarItem(
-            icon: const Icon(Icons.favorite),
-            title:const Text("Favorite"),
-            selectedColor: Colors.orange,
-          ),
+              icon: const Icon(Icons.favorite_outline),
+              title: const Text("Favorite"),
+              selectedColor: Colors.orange,
+              activeIcon: const Icon(
+                Icons.favorite,
+                color: Colors.blue,
+              )),
 
           /// Profile
           SalomonBottomBarItem(
-            icon:const Icon(Icons.person),
-            title:const Text("Profile"),
-            selectedColor: Colors.teal,
-          ),
+              icon: const Icon(Icons.person),
+              title: const Text("Profile"),
+              selectedColor: Colors.teal,
+              activeIcon: const Icon(
+                Icons.person,
+                color: Colors.blue,
+              )),
         ],
       ),
     );

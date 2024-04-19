@@ -1,6 +1,6 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:praner_market/widgets/custom_category_list.dart';
+import 'package:praner_market/widgets/custom_singleProduct.dart';
 import 'package:praner_market/widgets/custom_slider.dart';
 import 'package:praner_market/widgets/custom_title_subtitle.dart';
 import 'package:praner_market/widgets/custom_title_subtitle2.dart';
@@ -33,7 +33,11 @@ class Home_Screen extends StatelessWidget {
                       "Buy one product form any place, at any time.very easily with dhamaka."),
               Custom_Slider(),
               Custom_Title_Subtitle2(),
-              Custom_CategoryList()
+              Custom_CategoryList(),
+              SizedBox(
+                height: 20,
+              ),
+              Custom_SingleProduct()
             ],
           ),
         ),

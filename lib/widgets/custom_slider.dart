@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -7,23 +8,34 @@ class Custom_Slider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider.builder(
-      itemCount: 3,
-      options: CarouselOptions(
-        autoPlay: true,
-        enlargeCenterPage: true,
-        enlargeFactor: 0.3,
-        height: 140,
-      ),
-      itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
-          Container(
-        decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.circular(10),
-            image: const DecorationImage(
-                image: AssetImage("assets/image/slider1.jpg"),
-                fit: BoxFit.cover)),
-      ),
-    );
+    return StreamBuilder(
+        stream: FirebaseFirestore.instance.collection("slider").snapshots(),
+        builder: (_, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const CircularProgressIndicator();
+          }
+
+          return CarouselSlider.builder(
+              itemCount: snapshot.data!.docs.length,
+              options: CarouselOptions(
+                autoPlay: true,
+                enlargeCenterPage: true,
+                enlargeFactor: 0.3,
+                height: 140,
+              ),
+              itemBuilder:
+                  (BuildContext context, int itemIndex, int pageViewIndex) {
+                final data = snapshot.data!.docs[itemIndex];
+
+                return Container(
+                  decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                          image: NetworkImage(data["image"]),
+                          fit: BoxFit.cover)),
+                );
+              });
+        });
   }
 }
