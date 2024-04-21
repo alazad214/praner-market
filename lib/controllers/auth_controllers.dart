@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 import 'package:praner_market/auth/profile_setup.dart';
-import 'package:praner_market/screens/home_screen.dart';
 import '../screens/bottomnav_screen.dart';
 
 class Auth_Controller extends GetxController {

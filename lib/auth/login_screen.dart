@@ -22,7 +22,10 @@ class Login_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: const Custom_AppBar(),
+
+      appBar: const Custom_AppBar(
+        backgroundcolor: Colors.white,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -47,8 +50,8 @@ class Login_Screen extends StatelessWidget {
                       child: Custom_formField(
                         prefixicon: Icons.email,
                         hinttext: "Email",
-                        onchanged: (emeil){
-                          controller.email.value=emeil;
+                        onchanged: (emeil) {
+                          controller.email.value = emeil;
                         },
                         validation: (value) {
                           if (value!.isEmpty) {
@@ -67,8 +70,8 @@ class Login_Screen extends StatelessWidget {
                         prefixicon: Icons.remove_red_eye,
                         hinttext: "Password",
                         obscuretext: true,
-                        onchanged: (password){
-                          controller.password.value=password;
+                        onchanged: (password) {
+                          controller.password.value = password;
                         },
                         validation: (value) {
                           if (value!.isEmpty) {
@@ -105,7 +108,7 @@ class Login_Screen extends StatelessWidget {
                         },
                         child: const Text(
                           "Create new account?",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.blue),
                         ))),
               )
             ],

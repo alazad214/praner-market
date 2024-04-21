@@ -8,15 +8,14 @@ class Custom_AppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text("Profile"),
-      backgroundColor: backgroundcolor ?? Colors.black,
+      title: Text(""),
+      backgroundColor: backgroundcolor ?? Colors.white,
       leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
           icon: const Icon(
             Icons.arrow_back_ios,
-
           )),
     );
   }

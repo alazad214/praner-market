@@ -122,7 +122,7 @@ class Signup_screeen extends StatelessWidget {
                         },
                         child: const Text(
                           "Allready have an account?",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.blue),
                         ))),
               )
             ],

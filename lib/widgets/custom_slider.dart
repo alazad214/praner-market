@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -27,15 +28,16 @@ class Custom_Slider extends StatelessWidget {
                   (BuildContext context, int itemIndex, int pageViewIndex) {
                 final data = snapshot.data!.docs[itemIndex];
 
-                return Container(
-                  decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                          image: NetworkImage(data["image"]),
-                          fit: BoxFit.cover)),
+                return  CachedNetworkImage(
+                  height: 140,
+                  fit: BoxFit.cover,
+                  imageUrl: data["image"],
+                  placeholder: (context, url) =>
+                  const Center(child: CircularProgressIndicator()),
+                  errorWidget: (context, url, error) => Icon(Icons.error),
                 );
               });
         });
   }
 }
+
