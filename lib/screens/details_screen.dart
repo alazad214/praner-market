@@ -26,13 +26,12 @@ class Details_Screen extends StatelessWidget {
             decoration: const BoxDecoration(
               color: Colors.white,
             ),
-            child:     CachedNetworkImage(
+            child: CachedNetworkImage(
               fit: BoxFit.cover,
               imageUrl: data?["image"],
-              placeholder: (context, url) => const Center(
-                  child: CircularProgressIndicator()),
-              errorWidget: (context, url, error) =>
-              const Icon(Icons.error),
+              placeholder: (context, url) =>
+                  const Center(child: CircularProgressIndicator()),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),
           const SizedBox(height: 10),

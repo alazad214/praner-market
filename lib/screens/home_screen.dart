@@ -5,6 +5,8 @@ import 'package:praner_market/widgets/custom_slider.dart';
 import 'package:praner_market/widgets/custom_title_subtitle.dart';
 import 'package:praner_market/widgets/custom_title_subtitle2.dart';
 
+import 'custom_drawer.dart';
+
 class Home_Screen extends StatelessWidget {
   const Home_Screen({super.key});
 
@@ -12,7 +14,7 @@ class Home_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
+
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
         ],
@@ -42,6 +44,9 @@ class Home_Screen extends StatelessWidget {
           ),
         ),
       )),
+      drawer: Custom_Drawer(),
+
+
     );
   }
 }

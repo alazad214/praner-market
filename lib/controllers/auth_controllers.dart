@@ -65,16 +65,23 @@ class Auth_Controller extends GetxController {
     }
   }
 
+  Future signOut() async {
+    FirebaseAuth _auth = FirebaseAuth.instance;
+    try {
+      await _auth.signOut().then((value) {
+        Get.offAll(Log_In());
+      });
+    } on FirebaseAuthException catch (e) {
+      Get.snackbar("Error", e.message ?? "something wrong");
+    }
+  }
+
   profileSetUp() async {
-    await FirebaseFirestore.instance
-        .collection('users')
-        .doc(email.value)
-        .collection("user")
-        .add({
-      'email': email.value,
-      'full_name': name.value,
-      'address': address.value,
-      'phone_number': phone.value,
+    await FirebaseFirestore.instance.collection("Users").doc(email.value).set({
+      "email": email.value,
+      "full_name": name.value,
+      "address": address.value,
+      "phone_Number": phone.value,
     });
     Get.offAll(() => BottomNav_Screen());
   }

@@ -17,7 +17,7 @@ class Custom_Button extends StatelessWidget {
         height: 60,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: color ?? Colors.white,
+            color: color ?? Colors.blue,
             borderRadius: BorderRadius.circular(15),
             border: Border.all(color: Colors.blueAccent)),
         child: isloading == true
