@@ -16,27 +16,34 @@ class Custom_Slider extends StatelessWidget {
             return const CircularProgressIndicator();
           }
 
-          return CarouselSlider.builder(
-              itemCount: snapshot.data!.docs.length,
-              options: CarouselOptions(
-                autoPlay: true,
-                enlargeCenterPage: true,
-                enlargeFactor: 0.3,
-                height: 140,
-              ),
-              itemBuilder:
-                  (BuildContext context, int itemIndex, int pageViewIndex) {
-                final data = snapshot.data!.docs[itemIndex];
+          return Container(height: 140,
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
 
-                return  CachedNetworkImage(
+            ),
+            child: CarouselSlider.builder(
+                itemCount: snapshot.data!.docs.length,
+                options: CarouselOptions(
+                  autoPlay: true,
+                  enlargeCenterPage: true,
+                  enlargeFactor: 0.3,
                   height: 140,
-                  fit: BoxFit.cover,
-                  imageUrl: data["image"],
-                  placeholder: (context, url) =>
-                  const Center(child: CircularProgressIndicator()),
-                  errorWidget: (context, url, error) => Icon(Icons.error),
-                );
-              });
+                ),
+                itemBuilder:
+                    (BuildContext context, int itemIndex, int pageViewIndex) {
+                  final data = snapshot.data!.docs[itemIndex];
+
+                  return  CachedNetworkImage(
+                    height: 140,
+                    fit: BoxFit.cover,
+                    imageUrl: data["image"],
+                    placeholder: (context, url) =>
+                    const Center(child: CircularProgressIndicator()),
+                    errorWidget: (context, url, error) => Icon(Icons.error),
+                  );
+                }),
+          );
         });
   }
 }
