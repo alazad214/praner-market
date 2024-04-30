@@ -57,8 +57,6 @@ class Profile_Screen extends StatelessWidget {
                       Profile_Listtile(title: "Email", subtitle: email),
                       Profile_Listtile(title: "Address", subtitle: address),
                       Profile_Listtile(title: "Phone", subtitle: phone),
-
-
                       const SizedBox(height: 20.0),
                     ],
                   );

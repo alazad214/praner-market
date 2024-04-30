@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:praner_market/widgets/custom_category_list.dart';
+import 'package:praner_market/widgets/custom_headerTitle.dart';
 import 'package:praner_market/widgets/custom_singleProduct.dart';
 import 'package:praner_market/widgets/custom_slider.dart';
-import 'package:praner_market/widgets/custom_title_subtitle.dart';
+
 import 'package:praner_market/widgets/custom_title_subtitle2.dart';
 
 import 'custom_drawer.dart';
@@ -14,7 +15,6 @@ class Home_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
         ],
@@ -26,13 +26,7 @@ class Home_Screen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Custom_Title_SubTitle(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  textalign: TextAlign.start,
-                  title: "Al Azad",
-                  subtitle:
-                      "Buy one product form any place, at any time.very easily with dhamaka."),
+              Custom_HeaderTitle(),
               Custom_Slider(),
               Custom_Title_Subtitle2(),
               Custom_CategoryList(),
@@ -45,8 +39,6 @@ class Home_Screen extends StatelessWidget {
         ),
       )),
       drawer: Custom_Drawer(),
-
-
     );
   }
 }

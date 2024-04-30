@@ -22,7 +22,6 @@ class Login_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Height = MediaQuery.of(context).size.height;
     return Scaffold(
-
       appBar: const Custom_AppBar(
         backgroundcolor: Colors.white,
       ),

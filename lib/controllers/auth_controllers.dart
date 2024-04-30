@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:praner_market/auth/profile_setup.dart';
+import '../auth/login_screen.dart';
 import '../screens/bottomnav_screen.dart';
 
 class Auth_Controller extends GetxController {
@@ -69,7 +70,7 @@ class Auth_Controller extends GetxController {
     FirebaseAuth _auth = FirebaseAuth.instance;
     try {
       await _auth.signOut().then((value) {
-        Get.offAll(Log_In());
+        Get.offAll(Login_Screen());
       });
     } on FirebaseAuthException catch (e) {
       Get.snackbar("Error", e.message ?? "something wrong");

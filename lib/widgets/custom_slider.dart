@@ -16,11 +16,11 @@ class Custom_Slider extends StatelessWidget {
             return const CircularProgressIndicator();
           }
 
-          return Container(height: 140,
+          return Container(
+            height: 140,
             clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-
             ),
             child: CarouselSlider.builder(
                 itemCount: snapshot.data!.docs.length,
@@ -34,12 +34,12 @@ class Custom_Slider extends StatelessWidget {
                     (BuildContext context, int itemIndex, int pageViewIndex) {
                   final data = snapshot.data!.docs[itemIndex];
 
-                  return  CachedNetworkImage(
+                  return CachedNetworkImage(
                     height: 140,
                     fit: BoxFit.cover,
                     imageUrl: data["image"],
                     placeholder: (context, url) =>
-                    const Center(child: CircularProgressIndicator()),
+                        const Center(child: CircularProgressIndicator()),
                     errorWidget: (context, url, error) => Icon(Icons.error),
                   );
                 }),
@@ -47,4 +47,3 @@ class Custom_Slider extends StatelessWidget {
         });
   }
 }
-
