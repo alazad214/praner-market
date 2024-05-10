@@ -38,13 +38,11 @@ class Profile_Screen extends StatelessWidget {
                   }
                   final data = snapshot.data!.docs;
 
-                  // Find the current user's document based on email
                   final currentUserEmail =
                       FirebaseAuth.instance.currentUser?.email;
                   final currentUserDoc = data
                       .firstWhere((doc) => doc['email'] == currentUserEmail);
 
-                  // Extract user data
                   final name = currentUserDoc['full_name'];
                   final email = currentUserDoc['email'];
                   final address = currentUserDoc['address'];
