@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="praner_market"
+        android:label="প্রানের মার্কেট"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
